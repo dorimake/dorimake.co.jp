@@ -8,106 +8,155 @@
 <style>
 body {
   margin: 0;
-  font-family: 'Noto Sans JP', sans-serif;
+  font-family: "Helvetica Neue", Arial, sans-serif;
   color: #333;
 }
 
-section {
-  padding: 100px 20px;
-  max-width: 1100px;
-  margin: auto;
+/* ===== ヘッダー ===== */
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: rgba(0,0,0,0.6);
+  color: #fff;
+  padding: 15px 40px;
+  z-index: 1000;
 }
 
+header h1 {
+  margin: 0;
+  font-size: 18px;
+  letter-spacing: 2px;
+}
+
+/* ===== ヒーロー ===== */
 .hero {
-  height: 80vh;
-  background: url('https://images.unsplash.com/photo-1581091215367-59ab6b4b2e0c') center/cover;
-  color: white;
+  height: 100vh;
+  background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)),
+              url("https://images.unsplash.com/photo-1503387762-592deb58ef4e");
+  background-size: cover;
+  background-position: center;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  color: #fff;
 }
 
-.hero h1 {
-  font-size: 42px;
+.hero h2 {
+  font-size: 48px;
+  margin-bottom: 10px;
+  letter-spacing: 3px;
 }
 
-.btn {
-  background: #E60012;
-  color: white;
-  padding: 15px 30px;
-  display: inline-block;
-  margin-top: 20px;
-  text-decoration: none;
+.hero p {
+  font-size: 18px;
 }
 
+/* ===== セクション ===== */
+section {
+  padding: 80px 40px;
+  max-width: 1100px;
+  margin: auto;
+}
+
+h3 {
+  font-size: 28px;
+  margin-bottom: 30px;
+  border-left: 5px solid #7ac943;
+  padding-left: 10px;
+}
+
+/* ===== サービス ===== */
 .service {
   display: flex;
-  gap: 20px;
+  gap: 30px;
+  flex-wrap: wrap;
 }
 
-.service div {
+.service-box {
   flex: 1;
+  min-width: 250px;
 }
 
-.about {
-  display: flex;
-  gap: 40px;
+.service-box h4 {
+  margin-bottom: 10px;
 }
 
-.company p {
-  border-bottom: 1px solid #ddd;
-  padding: 10px 0;
+/* ===== CTA ===== */
+.cta {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.cta a {
+  background: #e60012;
+  color: #fff;
+  padding: 15px 30px;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+}
+
+/* ===== フッター ===== */
+footer {
+  background: #111;
+  color: #aaa;
+  text-align: center;
+  padding: 30px;
+  font-size: 14px;
 }
 </style>
+
 </head>
 
 <body>
 
-<section class="hero">
+<header>
+  <h1>株式会社ドリメイク</h1>
+</header>
+
+<div class="hero">
   <div>
-    <h1>建設現場を支える、<br>確かな受け入れと供給体制。</h1>
-    <p>建設発生土の受け入れから中間処理、骨材販売まで一貫対応。</p>
-    <a href="#contact" class="btn">お問い合わせ</a>
+    <h2>DORIMAKE</h2>
+    <p>建設現場の効率化と環境負荷低減を支える</p>
   </div>
-</section>
+</div>
 
 <section>
-  <h2>Service</h2>
+  <h3>Service</h3>
   <div class="service">
-    <div>
-      <h3>建設発生土の受け入れ</h3>
+    <div class="service-box">
+      <h4>建設発生土の受け入れ</h4>
       <p>各種工事で発生する建設発生土を適切に受け入れます。</p>
     </div>
-    <div>
-      <h3>中間処理</h3>
+    <div class="service-box">
+      <h4>中間処理</h4>
       <p>再利用可能な資材へ加工し、環境負荷を軽減します。</p>
     </div>
-    <div>
-      <h3>骨材販売</h3>
+    <div class="service-box">
+      <h4>骨材販売</h4>
       <p>RC-40などの建設資材を安定供給します。</p>
     </div>
   </div>
 </section>
 
-<section class="about">
-  <div>
-    <h2>About Us</h2>
-    <p>株式会社ドリメイクは、建設発生土の受け入れ・中間処理・骨材販売を通じて、現場の効率化と環境負荷低減に貢献しています。</p>
+<section>
+  <h3>About Us</h3>
+  <p>
+    株式会社ドリメイクは、建設発生土の受け入れ・中間処理・骨材販売を通じて、
+    現場の効率化と環境負荷低減に貢献しています。
+  </p>
+
+  <div class="cta">
+    <a href="#">お問い合わせ</a>
   </div>
 </section>
 
-<section class="company">
-  <h2>Company</h2>
-  <p>会社名：株式会社ドリメイク</p>
-  <p>所在地：〇〇</p>
-  <p>事業内容：発生土受け入れ・中間処理・骨材販売</p>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>お問い合わせはメールにてご連絡ください。</p>
-</section>
+<footer>
+  © 2026 株式会社ドリメイク
+</footer>
 
 </body>
 </html>
