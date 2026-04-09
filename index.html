@@ -2,596 +2,189 @@
 <html lang="ja">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>株式会社ドリメイク</title>
-  <meta name="description" content="株式会社ドリメイク｜建設発生土の受け入れ・中間処理・骨材販売">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
     body {
       margin: 0;
-      font-family: "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", "Meiryo", sans-serif;
-      color: #1f1f1f;
-      background: #f7f7f7;
-      line-height: 1.8;
+      font-family: "Arial", sans-serif;
+      color: #333;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 24px;
-    }
-
-    .site-header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(0, 0, 0, 0.42);
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .site-header-inner {
-      width: 100%;
-      max-width: 1280px;
-      margin: 0 auto;
-      padding: 14px 24px;
+    header {
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      gap: 20px;
-    }
-
-    .site-logo {
-      width: 320px;
-      max-width: 48vw;
-    }
-
-    .site-nav {
-      display: flex;
       align-items: center;
-      gap: 24px;
+      padding: 10px 40px;
+      background: #555;
     }
 
-    .site-nav a {
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 700;
-      letter-spacing: 0.04em;
-      opacity: 0.92;
-      transition: opacity 0.2s ease;
+    header img {
+      height: 60px;
     }
 
-    .site-nav a:hover {
-      opacity: 1;
+    nav a {
+      color: #fff;
+      margin-left: 20px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
+    /* ===== ヒーローエリア（背景画像ここ） ===== */
     .hero {
-      position: relative;
-      min-height: 100vh;
+      height: 100vh;
       display: flex;
       align-items: center;
+      padding-left: 60px;
+      color: #fff;
+
       background:
-        linear-gradient(rgba(0, 0, 0, 0.42), rgba(0, 0, 0, 0.42)),
-        url("./hero-bg.png") center center / cover no-repeat;
-      color: #ffffff;
-      overflow: hidden;
+        linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+        url('hero-bg.png');
+      background-size: cover;
+      background-position: center;
     }
 
-    .hero::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.10), transparent 32%),
-        linear-gradient(to top, rgba(0, 0, 0, 0.22), transparent 35%);
-      pointer-events: none;
+    .hero-content {
+      max-width: 600px;
     }
 
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      padding: 140px 0 90px;
+    .hero h1 {
+      font-size: 48px;
+      margin: 10px 0;
+      font-weight: bold;
     }
 
-    .hero-label {
-      display: inline-block;
-      margin: 0 0 20px;
-      padding: 8px 14px;
-      border: 1px solid rgba(255, 255, 255, 0.42);
-      border-radius: 999px;
-      background: rgba(255, 255, 255, 0.08);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      color: rgba(255, 255, 255, 0.96);
+    .hero h2 {
+      font-size: 28px;
+      letter-spacing: 5px;
+      margin-bottom: 20px;
     }
 
-    .hero-title-ja {
-      margin: 0 0 10px;
-      font-size: clamp(34px, 6vw, 72px);
-      font-weight: 800;
-      line-height: 1.18;
-      letter-spacing: 0.08em;
-      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.18);
-    }
-
-    .hero-title-en {
-      margin: 0 0 26px;
-      font-size: clamp(24px, 3.8vw, 52px);
-      font-weight: 800;
-      letter-spacing: 0.24em;
-      line-height: 1.1;
-      color: rgba(255, 255, 255, 0.95);
-      text-shadow: 0 6px 18px rgba(0, 0, 0, 0.16);
-    }
-
-    .hero-copy {
-      margin: 0 0 14px;
-      font-size: clamp(18px, 2vw, 28px);
-      font-weight: 700;
-      color: rgba(255, 255, 255, 0.98);
-    }
-
-    .hero-subcopy {
-      margin: 0 0 36px;
-      max-width: 760px;
-      font-size: 16px;
-      color: rgba(255, 255, 255, 0.92);
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
+    .hero p {
+      line-height: 1.8;
+      margin-bottom: 20px;
     }
 
     .btn {
       display: inline-block;
-      min-width: 180px;
-      padding: 16px 28px;
-      border-radius: 999px;
-      font-size: 15px;
-      font-weight: 700;
-      text-align: center;
-      transition: transform 0.2s ease, opacity 0.2s ease, background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-    }
-
-    .btn:hover {
-      transform: translateY(-2px);
-      opacity: 0.96;
+      padding: 12px 24px;
+      margin-right: 10px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
     }
 
     .btn-primary {
-      background: #ffffff;
-      color: #4e7d16;
-      border: 1px solid #ffffff;
+      background: #fff;
+      color: #4CAF50;
     }
 
-    .btn-secondary {
-      background: transparent;
-      color: #ffffff;
-      border: 1px solid rgba(255, 255, 255, 0.72);
+    .btn-outline {
+      border: 1px solid #fff;
+      color: #fff;
     }
 
-    .section {
-      padding: 96px 0;
-      background: #ffffff;
+    section {
+      padding: 60px 40px;
     }
 
-    .section-gray {
-      background: #f3f5f4;
-    }
-
-    .section-title {
-      margin: 0 0 16px;
-      font-size: 32px;
-      font-weight: 800;
-      letter-spacing: 0.04em;
-      color: #1d1d1d;
-    }
-
-    .section-lead {
-      margin: 0 0 48px;
-      color: #555555;
-      font-size: 15px;
-    }
-
-    .service-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
-
-    .service-card {
-      background: #ffffff;
-      border: 1px solid #e7e7e7;
-      border-radius: 20px;
-      padding: 32px 24px;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    .service-card-number {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      width: 42px;
-      height: 42px;
-      margin-bottom: 18px;
-      border-radius: 999px;
-      background: #b7d94b;
-      color: #ffffff;
-      font-size: 14px;
-      font-weight: 800;
-    }
-
-    .service-card h3 {
-      margin: 0 0 12px;
-      font-size: 22px;
-      font-weight: 800;
-      color: #222222;
-    }
-
-    .service-card p {
-      margin: 0;
-      color: #555555;
-      font-size: 15px;
-    }
-
-    .about-wrap {
-      display: grid;
-      grid-template-columns: 1.08fr 0.92fr;
-      gap: 40px;
-      align-items: center;
-    }
-
-    .about-text p {
-      margin: 0 0 18px;
-      color: #555555;
-      font-size: 15px;
-    }
-
-    .about-panel {
-      min-height: 320px;
-      border-radius: 24px;
-      background:
-        linear-gradient(rgba(144, 201, 61, 0.78), rgba(185, 219, 75, 0.78)),
-        url("./hero-bg.png") center center / cover no-repeat;
+    .service {
       display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 32px;
-      color: #ffffff;
+      justify-content: space-between;
+      flex-wrap: wrap;
+    }
+
+    .service-box {
+      width: 30%;
+      min-width: 250px;
+      margin-bottom: 20px;
+    }
+
+    footer {
       text-align: center;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-      position: relative;
-      overflow: hidden;
+      padding: 20px;
+      background: #eee;
     }
 
-    .about-panel::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.08);
-    }
-
-    .about-panel-content {
-      position: relative;
-      z-index: 1;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-panel-logo {
-      width: 90%;
-      max-width: 520px;
-      filter: drop-shadow(0 8px 20px rgba(0, 0, 0, 0.16));
-    }
-
-    .company-table {
-      width: 100%;
-      border-collapse: collapse;
-      background: #ffffff;
-      border-radius: 20px;
-      overflow: hidden;
-      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
-    }
-
-    .company-table th,
-    .company-table td {
-      padding: 20px 24px;
-      border-bottom: 1px solid #ececec;
-      text-align: left;
-      vertical-align: top;
-      font-size: 15px;
-    }
-
-    .company-table th {
-      width: 220px;
-      background: #fafafa;
-      color: #333333;
-      font-weight: 700;
-    }
-
-    .company-table td {
-      color: #555555;
-    }
-
-    .company-table tr:last-child th,
-    .company-table tr:last-child td {
-      border-bottom: none;
-    }
-
-    .contact-box {
-      background: linear-gradient(135deg, #1f1f1f 0%, #303030 100%);
-      color: #ffffff;
-      border-radius: 24px;
-      padding: 48px 32px;
-      text-align: center;
-      box-shadow: 0 14px 34px rgba(0, 0, 0, 0.08);
-    }
-
-    .contact-box p {
-      margin: 0 0 24px;
-      color: rgba(255, 255, 255, 0.88);
-    }
-
-    .footer {
-      padding: 28px 0;
-      background: #111111;
-      color: rgba(255, 255, 255, 0.72);
-      font-size: 13px;
-      text-align: center;
-    }
-
-    @media (max-width: 980px) {
-      .site-logo {
-        width: 240px;
+    /* スマホ対応 */
+    @media (max-width: 768px) {
+      .hero {
+        padding-left: 20px;
       }
 
-      .site-nav {
-        gap: 16px;
+      .hero h1 {
+        font-size: 32px;
       }
 
-      .service-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-wrap {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 900px) {
-      .company-table th,
-      .company-table td {
-        display: block;
-        width: 100%;
-      }
-
-      .company-table th {
-        padding-bottom: 8px;
-        border-bottom: none;
-      }
-
-      .company-table td {
-        padding-top: 0;
-      }
-
-      .company-table tr {
-        display: block;
-        padding: 12px 0;
-        border-bottom: 1px solid #ececec;
-      }
-
-      .company-table tr:last-child {
-        border-bottom: none;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .site-header-inner {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 12px;
-      }
-
-      .site-logo {
-        width: 220px;
-        max-width: 72vw;
-      }
-
-      .site-nav {
-        flex-wrap: wrap;
-        gap: 12px 16px;
-      }
-
-      .hero-inner {
-        padding: 150px 0 72px;
-      }
-
-      .section {
-        padding: 72px 0;
-      }
-
-      .hero-buttons {
+      .service {
         flex-direction: column;
       }
 
-      .btn {
+      .service-box {
         width: 100%;
-      }
-
-      .contact-box {
-        padding: 36px 24px;
       }
     }
   </style>
 </head>
+
 <body>
 
-  <header class="site-header">
-    <div class="site-header-inner">
-      <a href="#top" aria-label="株式会社ドリメイク トップへ戻る">
-        <img src="./logo.png" alt="株式会社ドリメイク ロゴ" class="site-logo">
-      </a>
-      <nav class="site-nav">
-        <a href="#service">Service</a>
-        <a href="#about">About</a>
-        <a href="#company">Company</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<header>
+  <img src="logo.png" alt="ロゴ">
+  <nav>
+    <a href="#">Service</a>
+    <a href="#">About</a>
+    <a href="#">Company</a>
+    <a href="#">Contact</a>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="hero-content">
+    <p>建設発生土の受け入れ・中間処理・骨材販売</p>
+    <h1>株式会社ドリメイク</h1>
+    <h2>DORIMAKE</h2>
+    <p>
+      現場の効率化と資源循環を支えるパートナー<br>
+      株式会社ドリメイクは、建設発生土の受け入れから中間処理、骨材販売まで一貫して対応します。
+    </p>
+
+    <a href="#" class="btn btn-primary">お問い合わせ</a>
+    <a href="#" class="btn btn-outline">事業内容を見る</a>
+  </div>
+</section>
+
+<section>
+  <h3>Service</h3>
+  <div class="service">
+    <div class="service-box">
+      <h4>建設発生土の受け入れ</h4>
+      <p>各種工事で発生する建設発生土を適切に受け入れます。</p>
     </div>
-  </header>
-
-  <section id="top" class="hero">
-    <div class="container hero-inner">
-      <p class="hero-label">建設発生土の受け入れ・中間処理・骨材販売</p>
-      <h1 class="hero-title-ja">株式会社ドリメイク</h1>
-      <p class="hero-title-en">DORIMAKE</p>
-      <p class="hero-copy">現場の効率化と資源循環を支えるパートナー</p>
-      <p class="hero-subcopy">
-        株式会社ドリメイクは、建設発生土の受け入れから中間処理、骨材販売まで一貫して対応し、
-        公共工事・浚渫工事・管工事など幅広い現場ニーズに応えます。
-      </p>
-      <div class="hero-buttons">
-        <a href="#contact" class="btn btn-primary">お問い合わせ</a>
-        <a href="#service" class="btn btn-secondary">事業内容を見る</a>
-      </div>
+    <div class="service-box">
+      <h4>中間処理</h4>
+      <p>再利用可能な資材へ加工し、環境負荷を軽減します。</p>
     </div>
-  </section>
-
-  <section id="service" class="section">
-    <div class="container">
-      <h2 class="section-title">Service</h2>
-      <p class="section-lead">
-        建設発生土の受け入れ・中間処理・骨材販売を通じて、現場の効率化と資源循環に貢献します。
-      </p>
-
-      <div class="service-grid">
-        <article class="service-card">
-          <div class="service-card-number">01</div>
-          <h3>建設発生土の受け入れ</h3>
-          <p>
-            各種工事で発生する建設発生土を適切に受け入れ、
-            現場の円滑な進行を支えます。
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card-number">02</div>
-          <h3>中間処理</h3>
-          <p>
-            再利用可能な資材へ加工し、環境負荷の軽減と
-            資源の有効活用に取り組みます。
-          </p>
-        </article>
-
-        <article class="service-card">
-          <div class="service-card-number">03</div>
-          <h3>骨材販売</h3>
-          <p>
-            RC-40などの建設資材を安定供給し、
-            多様な現場ニーズに対応します。
-          </p>
-        </article>
-      </div>
+    <div class="service-box">
+      <h4>骨材販売</h4>
+      <p>RC-40などの建設資材を安定供給します。</p>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section id="about" class="section section-gray">
-    <div class="container">
-      <div class="about-wrap">
-        <div class="about-text">
-          <h2 class="section-title">About Us</h2>
-          <p>
-            株式会社ドリメイクは、建設発生土の受け入れ・中間処理・骨材販売を通じて、
-            現場の効率化と環境負荷低減に貢献しています。
-          </p>
-          <p>
-            確かな受け入れ体制と柔軟な対応力を強みに、公共工事・浚渫工事・管工事など、
-            幅広い施工現場を支えるパートナーとして価値を提供します。
-          </p>
-        </div>
+<section>
+  <h3>About Us</h3>
+  <p>
+    株式会社ドリメイクは、建設発生土の受け入れ・中間処理・骨材販売を通じて、
+    現場の効率化と環境負荷低減に貢献しています。
+  </p>
+</section>
 
-        <div class="about-panel">
-          <div class="about-panel-content">
-            <img src="./logo.png" alt="株式会社ドリメイク ロゴ" class="about-panel-logo">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section id="company" class="section">
-    <div class="container">
-      <h2 class="section-title">Company</h2>
-      <table class="company-table">
-        <tr>
-          <th>会社名</th>
-          <td>株式会社ドリメイク</td>
-        </tr>
-        <tr>
-          <th>事業内容</th>
-          <td>建設発生土の受け入れ・中間処理・骨材販売</td>
-        </tr>
-        <tr>
-          <th>対応工事</th>
-          <td>公共工事・浚渫工事・管工事 など</td>
-        </tr>
-        <tr>
-          <th>所在地</th>
-          <td>※所在地を入力してください</td>
-        </tr>
-        <tr>
-          <th>電話番号</th>
-          <td>※電話番号を入力してください</td>
-        </tr>
-      </table>
-    </div>
-  </section>
-
-  <section id="contact" class="section section-gray">
-    <div class="container">
-      <div class="contact-box">
-        <h2 class="section-title" style="color: #ffffff; margin-bottom: 16px;">Contact</h2>
-        <p>
-          ご相談・お問い合わせは、下記よりお気軽にご連絡ください。
-        </p>
-        <a href="mailto:example@example.com" class="btn btn-primary">メールでお問い合わせ</a>
-      </div>
-    </div>
-  </section>
-
-  <footer class="footer">
-    <div class="container">
-      <p style="margin: 0;">© 株式会社ドリメイク All Rights Reserved.</p>
-    </div>
-  </footer>
+<footer>
+  © 2026 株式会社ドリメイク
+</footer>
 
 </body>
 </html>
