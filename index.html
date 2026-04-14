@@ -418,6 +418,42 @@
       font-weight: bold;
     }
 
+    .history-section {
+      background: #ffffff;
+    }
+
+    .history-table {
+      width: 100%;
+      border-collapse: collapse;
+      background: #ffffff;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+      border: 1px solid #ececec;
+    }
+
+    .history-table th,
+    .history-table td {
+      text-align: left;
+      padding: 20px 22px;
+      border-bottom: 1px solid #ededed;
+      vertical-align: top;
+      font-size: 16px;
+    }
+
+    .history-table tr:last-child th,
+    .history-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    .history-table th {
+      width: 24%;
+      background: #fafafa;
+      color: #222;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
     .contact-section {
       background: #222;
       color: #fff;
@@ -582,18 +618,22 @@
       }
 
       .company-table th,
-      .company-table td {
+      .company-table td,
+      .history-table th,
+      .history-table td {
         display: block;
         width: 100%;
         padding: 14px 16px;
       }
 
-      .company-table th {
+      .company-table th,
+      .history-table th {
         border-bottom: none;
         padding-bottom: 4px;
       }
 
-      .company-table td {
+      .company-table td,
+      .history-table td {
         padding-top: 0;
       }
     }
@@ -612,6 +652,7 @@
         <a href="#service">事業内容</a>
         <a href="#about">ドリメイクについて</a>
         <a href="#company">会社概要</a>
+        <a href="#history">沿革</a>
         <a href="#contact">お問い合わせ</a>
       </nav>
     </div>
@@ -763,7 +804,7 @@
       <span class="section-label">Company</span>
       <h3>会社概要</h3>
       <p>
-        詳細情報は、正式な会社情報にあわせて随時更新してください。
+        会社情報を掲載しています。
       </p>
     </div>
     <div class="company-grid">
@@ -775,6 +816,10 @@
           <tr>
             <th>会社名</th>
             <td>株式会社ドリメイク</td>
+          </tr>
+          <tr>
+            <th>代表者名</th>
+            <td>関谷崇人</td>
           </tr>
           <tr>
             <th>事業内容</th>
@@ -797,6 +842,10 @@
             <td>sekiya@tuti-rc.com</td>
           </tr>
           <tr>
+            <th>従業員数</th>
+            <td>３名</td>
+          </tr>
+          <tr>
             <th>営業時間</th>
             <td>平日（月～金）08:00 - 17:00 / 土・日休業</td>
           </tr>
@@ -807,6 +856,32 @@
         </table>
       </div>
     </div>
+  </div>
+</section>
+
+<section class="history-section" id="history">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">History</span>
+      <h3>沿革</h3>
+      <p>
+        会社の歩みを掲載しています。内容が決まり次第、随時追記してください。
+      </p>
+    </div>
+    <table class="history-table">
+      <tr>
+        <th>年月</th>
+        <td>※沿革内容をご記入ください</td>
+      </tr>
+      <tr>
+        <th>年月</th>
+        <td>※沿革内容をご記入ください</td>
+      </tr>
+      <tr>
+        <th>年月</th>
+        <td>※沿革内容をご記入ください</td>
+      </tr>
+    </table>
   </div>
 </section>
 
