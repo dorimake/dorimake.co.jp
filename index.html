@@ -345,6 +345,70 @@
       background: linear-gradient(to top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0));
     }
 
+    .download-section {
+      background: #f3f5f4;
+    }
+
+    .download-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .download-card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 190px;
+      background: #ffffff;
+      border-radius: 24px;
+      padding: 28px;
+      text-decoration: none;
+      border: 1px solid #e5ece7;
+      box-shadow: 0 10px 28px rgba(0, 0, 0, 0.06);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-card::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 7px;
+      height: 100%;
+      background: #4CAF50;
+    }
+
+    .download-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 34px rgba(0, 0, 0, 0.1);
+    }
+
+    .download-card h4 {
+      margin: 0 0 14px;
+      padding-left: 8px;
+      color: #222;
+      font-size: 22px;
+      line-height: 1.4;
+    }
+
+    .download-card p {
+      margin: 0;
+      padding-left: 8px;
+      color: #666;
+      font-size: 15px;
+    }
+
+    .download-action {
+      margin-top: 26px;
+      padding-left: 8px;
+      color: #4CAF50;
+      font-size: 15px;
+      font-weight: bold;
+    }
+
     .map-section {
       background: #f7f7f7;
     }
@@ -525,7 +589,8 @@
         font-size: 52px;
       }
 
-      .service {
+      .service,
+      .download-grid {
         grid-template-columns: 1fr 1fr;
       }
 
@@ -605,12 +670,22 @@
       }
 
       .service,
-      .gallery-grid {
+      .gallery-grid,
+      .download-grid {
         grid-template-columns: 1fr;
       }
 
       .service-box {
         padding: 26px 22px;
+      }
+
+      .download-card {
+        min-height: auto;
+        padding: 26px 22px;
+      }
+
+      .download-card h4 {
+        font-size: 20px;
       }
 
       .map-wrap iframe {
@@ -651,6 +726,7 @@
       <nav>
         <a href="#service">事業内容</a>
         <a href="#about">ドリメイクについて</a>
+        <a href="#download">資料ダウンロード</a>
         <a href="#company">会社概要</a>
         <a href="#history">沿革</a>
         <a href="#contact">お問い合わせ</a>
@@ -774,6 +850,42 @@
         <img src="S__648232964_0.jpg" alt="RC-40">
         <div class="gallery-caption">RC-40</div>
       </div>
+    </div>
+  </div>
+</section>
+
+<section class="download-section" id="download">
+  <div class="container">
+    <div class="section-head">
+      <span class="section-label">Download</span>
+      <h3>資料ダウンロード</h3>
+      <p>
+        書類名をクリックするとPDF資料を開くことができます。
+        会社案内や認定証など、必要な資料をご確認ください。
+      </p>
+    </div>
+    <div class="download-grid">
+      <a class="download-card" href="dorimake-pamphlet.pdf.pdf" target="_blank" rel="noopener noreferrer">
+        <div>
+          <h4>ドリメイク パンフレット</h4>
+          <p>建設発生土の受け入れ・中間処理・骨材販売に関する会社案内資料です。</p>
+        </div>
+        <div class="download-action">PDFを開く</div>
+      </a>
+      <a class="download-card" href="kairyodo-certificate.pdf.pdf" target="_blank" rel="noopener noreferrer">
+        <div>
+          <h4>改良土プラント認定証</h4>
+          <p>改良土等プラントとしての認定内容を確認できる資料です。</p>
+        </div>
+        <div class="download-action">PDFを開く</div>
+      </a>
+      <a class="download-card" href="npo-pamphlet.pdf.pdf" target="_blank" rel="noopener noreferrer">
+        <div>
+          <h4>NPOパンフレット</h4>
+          <p>関連資料として掲載しているパンフレットです。</p>
+        </div>
+        <div class="download-action">PDFを開く</div>
+      </a>
     </div>
   </div>
 </section>
