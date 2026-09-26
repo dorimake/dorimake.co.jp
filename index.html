@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>株式会社ドリメイク</title>
+  <title>株式会社ドリメイク｜角丸バランス比較プレビュー</title>
   <style>
 * {
       box-sizing: border-box;
@@ -1084,6 +1084,82 @@
       .preview-next { padding: 56px 20px; }
       .preview-next h2 { font-size: 28px; }
     }
+  
+    /* ===== Soft Modern Preview: restrained rounded details ===== */
+
+    /* About: soften the main visual only */
+    .about-visual,
+    .about-image,
+    .about-photo {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Products: rounded photography, not floating card boxes */
+    .product-image,
+    .product-item img,
+    .products-grid img {
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    /* Downloads: subtle card treatment */
+    .download-item,
+    .download-row,
+    .download-link {
+      border-radius: 12px;
+    }
+
+    .download-item,
+    .download-row {
+      border: 1px solid #e1e5df;
+      padding-left: 22px;
+      padding-right: 22px;
+      margin-bottom: 12px;
+      background: rgba(255,255,255,0.72);
+      transition: transform 0.22s ease, border-color 0.22s ease, background 0.22s ease;
+    }
+
+    .download-item:hover,
+    .download-row:hover {
+      transform: translateY(-2px);
+      border-color: #cbd3c8;
+      background: #ffffff;
+    }
+
+    /* Access: soften the map */
+    .map-wrap,
+    .access-map,
+    .map-frame {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Company: photo only; keep table linear */
+    .company-photo,
+    .company-image {
+      border-radius: 16px;
+      overflow: hidden;
+    }
+
+    /* Contact: slightly softer CTA buttons */
+    .contact-btn {
+      border-radius: 10px;
+    }
+
+    /* Hero buttons: a little softer while preserving the corporate look */
+    .btn {
+      border-radius: 8px;
+    }
+
+    /* Keep Service / History / Company rows linear intentionally */
+    .service-item,
+    .history-row,
+    .company-row {
+      border-radius: 0;
+      box-shadow: none;
+    }
+
   </style>
 </head>
 <body>
